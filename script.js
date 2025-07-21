@@ -55,114 +55,12 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.project-card, .stat, .floating-card, .skill-tag');
+    const animatedElements = document.querySelectorAll('.feature-card, .workout-category, .plan-card');
     animatedElements.forEach(el => {
         el.classList.add('loading');
         observer.observe(el);
     });
 });
-
-// Contact form handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const message = this.querySelector('textarea').value;
-        
-        // Simple validation
-        if (!name || !email || !message) {
-            showNotification('Please fill in all fields', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address', 'error');
-            return;
-        }
-        
-        // Simulate form submission
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        setTimeout(() => {
-            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-            this.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
-    });
-}
-
-// Email validation function
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// Notification system
-function showNotification(message, type = 'info') {
-    // Remove existing notifications
-    const existingNotification = document.querySelector('.notification');
-    if (existingNotification) {
-        existingNotification.remove();
-    }
-    
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <span class="notification-message">${message}</span>
-            <button class="notification-close">&times;</button>
-        </div>
-    `;
-    
-    // Add styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        z-index: 10000;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        max-width: 400px;
-    `;
-    
-    // Add to page
-    document.body.appendChild(notification);
-    
-    // Animate in
-    setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 100);
-    
-    // Close button functionality
-    const closeBtn = notification.querySelector('.notification-close');
-    closeBtn.addEventListener('click', () => {
-        notification.style.transform = 'translateX(100%)';
-        setTimeout(() => notification.remove(), 300);
-    });
-    
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => notification.remove(), 300);
-        }
-    }, 5000);
-}
 
 // Typing animation for hero title
 function typeWriter(element, text, speed = 100) {
@@ -191,20 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Parallax effect for floating cards
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const floatingCards = document.querySelectorAll('.floating-card');
-    
-    floatingCards.forEach((card, index) => {
-        const speed = 0.5 + (index * 0.1);
-        const yPos = -(scrolled * speed);
-        card.style.transform = `translateY(${yPos}px)`;
-    });
-});
-
-// Add hover effects to project cards
-document.querySelectorAll('.project-card').forEach(card => {
+// Add hover effects to feature cards
+document.querySelectorAll('.feature-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-10px) scale(1.02)';
     });
@@ -214,52 +100,61 @@ document.querySelectorAll('.project-card').forEach(card => {
     });
 });
 
-// Skill tags animation
-document.querySelectorAll('.skill-tag').forEach((tag, index) => {
-    tag.style.animationDelay = `${index * 0.1}s`;
-    tag.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.1) rotate(5deg)';
+// Add hover effects to workout categories
+document.querySelectorAll('.workout-category').forEach(category => {
+    category.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px) scale(1.02)';
     });
     
-    tag.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1) rotate(0deg)';
+    category.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
     });
+});
+
+// Add hover effects to plan cards
+document.querySelectorAll('.plan-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// Animate stats on scroll
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const statNumber = entry.target.querySelector('.stat-number');
+            const finalValue = statNumber.textContent;
+            animateNumber(statNumber, finalValue);
+        }
+    });
+}, { threshold: 0.5 });
+
+function animateNumber(element, finalValue) {
+    let currentValue = 0;
+    const increment = parseInt(finalValue) / 50;
+    const timer = setInterval(() => {
+        currentValue += increment;
+        if (currentValue >= parseInt(finalValue)) {
+            element.textContent = finalValue;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(currentValue);
+        }
+    }, 50);
+}
+
+document.querySelectorAll('.stat-item').forEach(stat => {
+    statsObserver.observe(stat);
 });
 
 // Loading animation for page
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
-
-// Add CSS for notification styles
-const notificationStyles = document.createElement('style');
-notificationStyles.textContent = `
-    .notification-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-    }
-    
-    .notification-close {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 0;
-        line-height: 1;
-    }
-    
-    .notification-close:hover {
-        opacity: 0.8;
-    }
-    
-    .notification-message {
-        flex: 1;
-    }
-`;
-document.head.appendChild(notificationStyles);
 
 // Add some fun interactive elements
 document.addEventListener('DOMContentLoaded', () => {
@@ -314,7 +209,7 @@ progressBar.style.cssText = `
     left: 0;
     width: 0%;
     height: 3px;
-    background: linear-gradient(90deg, #2563eb, #ffd700);
+    background: linear-gradient(90deg, #1e40af, #fbbf24);
     z-index: 10001;
     transition: width 0.1s ease;
 `;
@@ -323,4 +218,86 @@ document.body.appendChild(progressBar);
 window.addEventListener('scroll', () => {
     const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     progressBar.style.width = scrolled + '%';
-}); 
+});
+
+// Add parallax effect to app mockup
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const appMockup = document.querySelector('.app-mockup');
+    if (appMockup) {
+        const yPos = -(scrolled * 0.3);
+        appMockup.style.transform = `translateY(${yPos}px)`;
+    }
+});
+
+// Add floating animation to screenshots
+document.querySelectorAll('.screenshot').forEach((screenshot, index) => {
+    screenshot.style.animation = `float ${6 + index}s ease-in-out infinite`;
+    screenshot.style.animationDelay = `${index * 2}s`;
+});
+
+// Add floating animation CSS
+const floatStyles = document.createElement('style');
+floatStyles.textContent = `
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(-5deg); }
+        50% { transform: translateY(-20px) rotate(-5deg); }
+    }
+    
+    .screenshot:nth-child(2) {
+        animation: float2 ${6}s ease-in-out infinite;
+    }
+    
+    @keyframes float2 {
+        0%, 100% { transform: translateY(0px) rotate(5deg); }
+        50% { transform: translateY(-20px) rotate(5deg); }
+    }
+`;
+document.head.appendChild(floatStyles);
+
+// Add counter animation for download stats
+function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(start);
+        }
+    }, 16);
+}
+
+// Trigger counter animation when stats come into view
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const statNumber = entry.target.querySelector('.stat-number');
+            const value = statNumber.textContent;
+            if (value.includes('+')) {
+                const numValue = parseInt(value);
+                animateCounter(statNumber, numValue);
+            } else if (value === '∞') {
+                // Special animation for infinity symbol
+                statNumber.style.animation = 'pulse 2s infinite';
+            }
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-item').forEach(stat => {
+    counterObserver.observe(stat);
+});
+
+// Add pulse animation for infinity symbol
+const pulseStyles = document.createElement('style');
+pulseStyles.textContent = `
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+`;
+document.head.appendChild(pulseStyles); 

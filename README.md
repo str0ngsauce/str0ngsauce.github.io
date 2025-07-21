@@ -1,59 +1,65 @@
-# Str0ngSauce Personal Website
+# GainsLab - Climbing Training App Landing Page
 
-A modern, responsive personal website built with HTML, CSS, and JavaScript. This website showcases a professional portfolio with beautiful animations, interactive elements, and a clean design.
+A modern, responsive landing page for the GainsLab climbing training app. This website showcases the app's features, training categories, and provides direct download links to the Google Play Store.
 
-## 🌟 Features
+## 🌟 About GainsLab
+
+GainsLab is a comprehensive climbing training app that provides:
+- **Extensive Workout Library**: Access climbing-specific workouts including finger strength, endurance, power, and strength & conditioning
+- **Training Plans**: Ready-to-use 8-week training programs for various climbing goals
+- **Smart Analytics**: Track your progress with built-in timers and detailed analytics
+- **100% Free**: No fees, no subscriptions, no ads - everything you need for serious climbing training
+- **Local Backup**: Save your workout logs locally on your device with no accounts required
+- **Export & Share**: Export training plans for safe keeping or share with climbing partners
+
+## 🚀 Features
 
 ### Design & User Experience
-- **Modern Design**: Clean, professional layout with beautiful gradients and animations
+- **Modern Design**: Clean, professional layout with climbing-themed colors and animations
 - **Responsive**: Fully responsive design that works on all devices (desktop, tablet, mobile)
 - **Smooth Animations**: CSS animations and JavaScript interactions for enhanced user experience
 - **Interactive Elements**: Hover effects, click animations, and smooth scrolling
 
 ### Sections
-1. **Hero Section**: Eye-catching introduction with animated floating cards
-2. **About Section**: Personal information with skills and statistics
-3. **Projects Section**: Showcase of featured projects with technology tags
-4. **Contact Section**: Contact form with validation and social media links
-5. **Footer**: Additional links and social media connections
+1. **Hero Section**: Eye-catching introduction with app mockup and download button
+2. **Features Section**: Six key features with icons and descriptions
+3. **Workouts Section**: Comprehensive training categories with specific exercises
+4. **Training Plans Section**: Showcase of ready-to-use training programs
+5. **Download Section**: Call-to-action with app screenshots and download link
+6. **Footer**: Additional links and contact information
 
 ### Technical Features
 - **Mobile Navigation**: Hamburger menu for mobile devices
-- **Form Validation**: Contact form with email validation and success notifications
 - **Scroll Progress**: Visual progress bar showing scroll position
 - **Parallax Effects**: Subtle parallax animations on scroll
 - **Loading Animations**: Smooth fade-in animations for content
-- **Notification System**: Toast notifications for form submissions
+- **Counter Animations**: Animated statistics and download numbers
+- **Floating Elements**: Animated app screenshots and mockups
 
-## 🚀 Getting Started
+## 📱 App Download
 
-### Prerequisites
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- No additional dependencies required - everything is included!
+**Download GainsLab on Google Play Store:**
+[GainsLab - Climbing Training App](https://play.google.com/store/apps/details?id=com.pinchd&utm_source=emea_Med)
 
-### Installation
-1. Clone or download this repository
-2. Open `index.html` in your web browser
-3. That's it! The website is ready to use.
+## 🎨 Design System
 
-### Customization
+### Color Palette
+- **Primary Blue**: #1e40af (Deep blue for climbing theme)
+- **Secondary Blue**: #3b82f6 (Lighter blue for gradients)
+- **Accent Gold**: #fbbf24 (Golden yellow for highlights)
+- **Text**: #1f2937 (dark), #6b7280 (medium), #9ca3af (light)
+- **Background**: #f8fafc (light), #1f2937 (dark)
 
-#### Personal Information
-Edit the following sections in `index.html`:
-- **Name/Brand**: Update "Str0ngSauce" throughout the file
-- **About Section**: Modify the personal description and skills
-- **Projects**: Replace with your own projects and descriptions
-- **Contact Information**: Update email, social media links, and contact details
+### Typography
+- **Font Family**: Inter (Google Fonts)
+- **Weights**: 300, 400, 500, 600, 700
+- **Responsive**: Scales appropriately on all devices
 
-#### Styling
-- **Colors**: Modify the CSS variables in `styles.css` to change the color scheme
-- **Fonts**: Change the Google Fonts import to use different typography
-- **Layout**: Adjust grid layouts and spacing in the CSS file
-
-#### Content
-- **Images**: Replace placeholder icons with your own images
-- **Text**: Update all text content to reflect your personal information
-- **Links**: Add real project links and social media profiles
+### Components
+- **Buttons**: Primary and secondary button styles with hover effects
+- **Cards**: Feature cards, workout categories, and training plans
+- **Navigation**: Fixed navbar with smooth scrolling
+- **App Mockup**: Interactive phone mockup showing app interface
 
 ## 📁 File Structure
 
@@ -65,26 +71,6 @@ str0ngsauce.github.io/
 ├── README.md           # This file
 └── CNAME              # Custom domain configuration
 ```
-
-## 🎨 Design System
-
-### Color Palette
-- **Primary Blue**: #2563eb
-- **Accent Gold**: #ffd700
-- **Gradient**: #667eea to #764ba2
-- **Text**: #1f2937 (dark), #6b7280 (medium), #9ca3af (light)
-- **Background**: #f8fafc (light), #1f2937 (dark)
-
-### Typography
-- **Font Family**: Inter (Google Fonts)
-- **Weights**: 300, 400, 500, 600, 700
-- **Responsive**: Scales appropriately on all devices
-
-### Components
-- **Buttons**: Primary and secondary button styles with hover effects
-- **Cards**: Project cards with hover animations
-- **Forms**: Styled form inputs with focus states
-- **Navigation**: Fixed navbar with smooth scrolling
 
 ## 🔧 Browser Support
 
@@ -122,9 +108,65 @@ To use a custom domain:
 - **Efficient Animations**: CSS animations for smooth performance
 - **Progressive Enhancement**: Works without JavaScript (basic functionality)
 
-## 🤝 Contributing
+## 🧗‍♂️ Training Categories
 
-Feel free to fork this project and customize it for your own use. If you make improvements that could benefit others, consider submitting a pull request!
+The app includes comprehensive training categories:
+
+### Finger Strength
+- 1 & 2 Hand Hangboard Benchmarks
+- Max Hangs Training
+- Edge Pick-up Exercises
+- Density Hangs
+
+### Power
+- Dynamic Movements
+- Plyometric Training
+- Explosive Pull-ups
+- Board Training
+
+### Endurance
+- ARC Training
+- 4x4s
+- Pyramids
+- Route Intervals
+
+### Strength & Conditioning
+- Weighted Pull-ups
+- Core Training
+- Antagonist Work
+- General Fitness
+
+### Power Endurance
+- Boulder Circuits
+- Linked Problems
+- Interval Training
+- Mixed Intensity
+
+### Flexibility
+- Hip Mobility
+- Shoulder Flexibility
+- Recovery Stretches
+- Pre-climb Warm-ups
+
+## 📊 Training Plans
+
+Ready-to-use training programs include:
+
+### Endurance for Sport Climbing (8 weeks)
+Build a solid endurance base while maintaining strength and power through bouldering.
+
+### Finger Strength Progression (8 weeks)
+Targeted finger strength development with progressive overload.
+
+### Power Progression (6 weeks)
+Develop explosive power for dynamic and athletic climbing.
+
+## 🤝 Support
+
+For support or questions about the app:
+- **Email**: aaronclifford1@gmail.com
+- **Location**: United Kingdom
+- **App Store**: [Google Play Store](https://play.google.com/store/apps/details?id=com.pinchd&utm_source=emea_Med)
 
 ## 📄 License
 
@@ -139,6 +181,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-**Built with ❤️ by Str0ngSauce**
+**Built with ❤️ by Aaron Clifford for the climbing community**
 
-For questions or support, feel free to reach out through the contact form on the website!
+No fees, no subscriptions, no ads - just climbing gains! 🧗‍♂️
