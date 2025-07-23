@@ -44,9 +44,9 @@ GainsLab is a comprehensive climbing training app that provides:
 ## 🎨 Design System
 
 ### Color Palette
-- **Primary Blue**: #1e40af (Deep blue for climbing theme)
-- **Secondary Blue**: #3b82f6 (Lighter blue for gradients)
-- **Accent Gold**: #fbbf24 (Golden yellow for highlights)
+- **Primary Container**: #14213DFF (Deep navy blue - app's primary container color)
+- **Primary Accent**: #FCA311FF (Vibrant orange - app's primary accent color)
+- **Secondary Blue**: #1e3a8a (Lighter blue for gradients)
 - **Text**: #1f2937 (dark), #6b7280 (medium), #9ca3af (light)
 - **Background**: #f8fafc (light), #1f2937 (dark)
 

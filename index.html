@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GainsLab - Climbing Training App | No Fees, No Subscriptions, All Gains</title>
     <meta name="description" content="Transform your climbing training with GainsLab. Access extensive workout libraries, create custom training plans, and track your progress - all completely free with no ads or subscriptions.">
+    <link rel="icon" href="images/icons/ic_launcher.webp" type="image/webp">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,7 +15,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-flask"></i>
+                <img src="images/icons/ic_launcher.webp" alt="GainsLab" class="nav-icon">
                 <h2>GainsLab</h2>
             </div>
             <ul class="nav-menu">
@@ -23,9 +24,6 @@
                 </li>
                 <li class="nav-item">
                     <a href="#features" class="nav-link">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#workouts" class="nav-link">Workouts</a>
                 </li>
                 <li class="nav-item">
                     <a href="#download" class="nav-link">Download</a>
@@ -68,28 +66,9 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="app-mockup">
-                    <div class="phone-frame">
-                        <div class="phone-screen">
-                            <div class="app-header">
-                                <i class="fas fa-flask"></i>
-                                <span>GAINSLAB</span>
-                            </div>
-                            <div class="app-content">
-                                <div class="workout-card">
-                                    <h3>Finger Strength</h3>
-                                    <p>Max hangs, benchmarks, and more</p>
-                                </div>
-                                <div class="workout-card">
-                                    <h3>Training Plans</h3>
-                                    <p>8-week structured programs</p>
-                                </div>
-                                <div class="workout-card">
-                                    <h3>Analytics</h3>
-                                    <p>Track your progress</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="app-screenshots">
+                    <div class="screenshot screenshot-hero">
+                        <img src="images/app-screenshots/screenshot_00.png" alt="GainsLab App Screenshot" class="screenshot-img">
                     </div>
                 </div>
             </div>
@@ -147,132 +126,6 @@
         </div>
     </section>
 
-    <!-- Workouts Section -->
-    <section id="workouts" class="workouts">
-        <div class="container">
-            <h2 class="section-title">Comprehensive Training Categories</h2>
-            <div class="workouts-grid">
-                <div class="workout-category">
-                    <div class="category-icon">
-                        <i class="fas fa-hand-rock"></i>
-                    </div>
-                    <h3>Finger Strength</h3>
-                    <ul>
-                        <li>1 & 2 Hand Hangboard Benchmarks</li>
-                        <li>Max Hangs Training</li>
-                        <li>Edge Pick-up Exercises</li>
-                        <li>Density Hangs</li>
-                    </ul>
-                </div>
-                <div class="workout-category">
-                    <div class="category-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <h3>Power</h3>
-                    <ul>
-                        <li>Dynamic Movements</li>
-                        <li>Plyometric Training</li>
-                        <li>Explosive Pull-ups</li>
-                        <li>Board Training</li>
-                    </ul>
-                </div>
-                <div class="workout-category">
-                    <div class="category-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3>Endurance</h3>
-                    <ul>
-                        <li>ARC Training</li>
-                        <li>4x4s</li>
-                        <li>Pyramids</li>
-                        <li>Route Intervals</li>
-                    </ul>
-                </div>
-                <div class="workout-category">
-                    <div class="category-icon">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <h3>Strength & Conditioning</h3>
-                    <ul>
-                        <li>Weighted Pull-ups</li>
-                        <li>Core Training</li>
-                        <li>Antagonist Work</li>
-                        <li>General Fitness</li>
-                    </ul>
-                </div>
-                <div class="workout-category">
-                    <div class="category-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Power Endurance</h3>
-                    <ul>
-                        <li>Boulder Circuits</li>
-                        <li>Linked Problems</li>
-                        <li>Interval Training</li>
-                        <li>Mixed Intensity</li>
-                    </ul>
-                </div>
-                <div class="workout-category">
-                    <div class="category-icon">
-                        <i class="fas fa-yoga"></i>
-                    </div>
-                    <h3>Flexibility</h3>
-                    <ul>
-                        <li>Hip Mobility</li>
-                        <li>Shoulder Flexibility</li>
-                        <li>Recovery Stretches</li>
-                        <li>Pre-climb Warm-ups</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Training Plans Section -->
-    <section class="training-plans">
-        <div class="container">
-            <h2 class="section-title">Ready-to-Use Training Plans</h2>
-            <div class="plans-grid">
-                <div class="plan-card">
-                    <div class="plan-header">
-                        <h3>Endurance for Sport Climbing</h3>
-                        <span class="plan-duration">8 weeks</span>
-                    </div>
-                    <p>Build a solid endurance base while maintaining strength and power through bouldering. Perfect for sport climbers looking to improve their stamina.</p>
-                    <div class="plan-features">
-                        <span class="feature-tag">Repeaters</span>
-                        <span class="feature-tag">Long Boulders</span>
-                        <span class="feature-tag">Minute-on Minute-off</span>
-                    </div>
-                </div>
-                <div class="plan-card">
-                    <div class="plan-header">
-                        <h3>Finger Strength Progression</h3>
-                        <span class="plan-duration">8 weeks</span>
-                    </div>
-                    <p>Targeted finger strength development with progressive overload. Supplement your regular climbing with focused finger training.</p>
-                    <div class="plan-features">
-                        <span class="feature-tag">Max Hangs</span>
-                        <span class="feature-tag">Benchmarks</span>
-                        <span class="feature-tag">Progressive Loading</span>
-                    </div>
-                </div>
-                <div class="plan-card">
-                    <div class="plan-header">
-                        <h3>Power Progression</h3>
-                        <span class="plan-duration">6 weeks</span>
-                    </div>
-                    <p>Develop explosive power for dynamic and athletic climbing. Focus on board training and dynamic movements.</p>
-                    <div class="plan-features">
-                        <span class="feature-tag">Board Training</span>
-                        <span class="feature-tag">Dynamic Moves</span>
-                        <span class="feature-tag">Plyometrics</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Download Section -->
     <section id="download" class="download">
         <div class="container">
@@ -306,37 +159,13 @@
                 <div class="download-image">
                     <div class="app-screenshots">
                         <div class="screenshot screenshot-1">
-                            <div class="screenshot-content">
-                                <div class="screenshot-header">
-                                    <i class="fas fa-flask"></i>
-                                    <span>GAINSLAB</span>
-                                </div>
-                                <div class="screenshot-body">
-                                    <h4>Finger Strength</h4>
-                                    <div class="workout-list">
-                                        <div class="workout-item">1 Hand Hangboard Benchmark</div>
-                                        <div class="workout-item">2 Hand Hangboard Max Hangs</div>
-                                        <div class="workout-item">Edge Pick-up Max</div>
-                                    </div>
-                                </div>
-                            </div>
+                            <img src="images/app-screenshots/screenshot_01.png" alt="GainsLab App Screenshot" class="screenshot-img">
                         </div>
                         <div class="screenshot screenshot-2">
-                            <div class="screenshot-content">
-                                <div class="screenshot-header">
-                                    <i class="fas fa-chart-line"></i>
-                                    <span>Analytics</span>
-                                </div>
-                                <div class="screenshot-body">
-                                    <h4>Progress Tracking</h4>
-                                    <div class="chart-placeholder">
-                                        <div class="chart-bar" style="height: 60%"></div>
-                                        <div class="chart-bar" style="height: 80%"></div>
-                                        <div class="chart-bar" style="height: 70%"></div>
-                                        <div class="chart-bar" style="height: 90%"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            <img src="images/app-screenshots/screenshot_02.png" alt="GainsLab App Screenshot" class="screenshot-img">
+                        </div>
+                        <div class="screenshot screenshot-3">
+                            <img src="images/app-screenshots/screenshot_03.png" alt="GainsLab App Screenshot" class="screenshot-img">
                         </div>
                     </div>
                 </div>
@@ -350,7 +179,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <i class="fas fa-flask"></i>
+                        <img src="images/icons/ic_launcher.webp" alt="GainsLab" class="footer-icon">
                         <h3>GainsLab</h3>
                     </div>
                     <p>Transform your climbing training with our comprehensive, free app. No fees, no subscriptions, all gains.</p>
@@ -359,7 +188,7 @@
                     <h4>Features</h4>
                     <ul>
                         <li><a href="#features">Workout Library</a></li>
-                        <li><a href="#workouts">Training Plans</a></li>
+                        <li><a href="#features">Training Plans</a></li>
                         <li><a href="#features">Analytics</a></li>
                         <li><a href="#features">Progress Tracking</a></li>
                     </ul>

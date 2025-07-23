@@ -209,7 +209,7 @@ progressBar.style.cssText = `
     left: 0;
     width: 0%;
     height: 3px;
-    background: linear-gradient(90deg, #1e40af, #fbbf24);
+    background: linear-gradient(90deg, #14213DFF, #FCA311FF);
     z-index: 10001;
     transition: width 0.1s ease;
 `;

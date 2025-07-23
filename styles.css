@@ -5,6 +5,15 @@
     box-sizing: border-box;
 }
 
+/* Custom Font for Headers */
+@font-face {
+    font-family: 'ProductDesign';
+    src: url('fonts/ProductDesign.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -49,13 +58,15 @@ body {
     gap: 0.5rem;
 }
 
-.nav-logo i {
-    color: #1e40af;
-    font-size: 1.5rem;
+.nav-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
 }
 
 .nav-logo h2 {
-    color: #1e40af;
+    font-family: 'ProductDesign', 'Inter', sans-serif;
+    color: #14213DFF;
     font-weight: 700;
     font-size: 1.5rem;
 }
@@ -75,7 +86,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #1e40af;
+    color: #14213DFF;
 }
 
 .nav-link::after {
@@ -85,7 +96,7 @@ body {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #1e40af;
+    background-color: #14213DFF;
     transition: width 0.3s ease;
 }
 
@@ -112,7 +123,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+    background: linear-gradient(135deg, #14213DFF 0%, #1e3a8a 50%, #3b82f6 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -149,7 +160,7 @@ body {
 }
 
 .highlight {
-    background: linear-gradient(45deg, #fbbf24, #f59e0b);
+    background: linear-gradient(45deg, #FCA311FF, #f59e0b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -183,14 +194,14 @@ body {
 }
 
 .btn-primary {
-    background: #fbbf24;
+    background: #FCA311FF;
     color: #1f2937;
 }
 
 .btn-primary:hover {
     background: #f59e0b;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+    box-shadow: 0 10px 25px rgba(252, 163, 17, 0.3);
 }
 
 .btn-secondary {
@@ -219,7 +230,7 @@ body {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    color: #fbbf24;
+    color: #FCA311FF;
 }
 
 .stat-label {
@@ -227,65 +238,64 @@ body {
     opacity: 0.8;
 }
 
-/* App Mockup */
-.app-mockup {
+/* App Screenshots */
+.hero-image {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.phone-frame {
-    width: 280px;
-    height: 560px;
-    background: #1f2937;
-    border-radius: 30px;
-    padding: 8px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    position: relative;
-}
-
-.phone-screen {
-    width: 100%;
-    height: 100%;
-    background: white;
-    border-radius: 22px;
-    overflow: hidden;
-    position: relative;
-}
-
-.app-header {
-    background: #1e40af;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
-}
-
-.app-content {
-    padding: 1rem;
+.app-screenshots {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
+    align-items: center;
 }
 
-.workout-card {
-    background: #f8fafc;
-    padding: 1rem;
-    border-radius: 12px;
-    border-left: 4px solid #1e40af;
+.screenshot {
+    width: 280px;
+    height: 600px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
-.workout-card h3 {
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
-    color: #1f2937;
+/* Hero screenshot - single, centered */
+.screenshot-hero {
+    transform: rotate(-5deg);
+    margin: 0 auto;
 }
 
-.workout-card p {
-    font-size: 0.875rem;
-    color: #6b7280;
+.screenshot-hero:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Download section screenshots - multiple with different rotations */
+.screenshot:nth-child(1) {
+    transform: rotate(-5deg);
+}
+
+.screenshot:nth-child(2) {
+    transform: rotate(5deg);
+}
+
+.screenshot:nth-child(3) {
+    transform: rotate(-3deg);
+}
+
+.screenshot:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.screenshot-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 /* Features Section */
@@ -325,7 +335,7 @@ body {
 .feature-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    background: linear-gradient(135deg, #14213DFF, #1e3a8a);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -346,135 +356,10 @@ body {
     line-height: 1.6;
 }
 
-/* Workouts Section */
-.workouts {
-    padding: 5rem 0;
-}
-
-.workouts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.workout-category {
-    background: white;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    border-top: 4px solid #1e40af;
-}
-
-.workout-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.category-icon {
-    width: 60px;
-    height: 60px;
-    background: #fbbf24;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    color: #1f2937;
-    font-size: 1.5rem;
-}
-
-.workout-category h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #1f2937;
-}
-
-.workout-category ul {
-    list-style: none;
-    color: #6b7280;
-}
-
-.workout-category li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #f3f4f6;
-}
-
-.workout-category li:last-child {
-    border-bottom: none;
-}
-
-/* Training Plans Section */
-.training-plans {
-    padding: 5rem 0;
-    background: #f8fafc;
-}
-
-.plans-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-}
-
-.plan-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
-
-.plan-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.plan-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.plan-header h3 {
-    font-size: 1.5rem;
-    color: #1f2937;
-}
-
-.plan-duration {
-    background: #1e40af;
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 500;
-}
-
-.plan-card p {
-    color: #6b7280;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-
-.plan-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.feature-tag {
-    background: #f3f4f6;
-    color: #374151;
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.75rem;
-    font-weight: 500;
-}
-
 /* Download Section */
 .download {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    background: linear-gradient(135deg, #14213DFF 0%, #1e3a8a 100%);
     color: white;
 }
 
@@ -512,93 +397,13 @@ body {
 }
 
 .download-feature i {
-    color: #fbbf24;
+    color: #FCA311FF;
     font-size: 1.25rem;
 }
 
 .download-btn {
     font-size: 1.1rem;
     padding: 1rem 2rem;
-}
-
-/* App Screenshots */
-.app-screenshots {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-}
-
-.screenshot {
-    width: 280px;
-    height: 500px;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    transform: rotate(-5deg);
-}
-
-.screenshot:nth-child(2) {
-    transform: rotate(5deg);
-}
-
-.screenshot-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.screenshot-header {
-    background: #1e40af;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
-}
-
-.screenshot-body {
-    padding: 1rem;
-    flex: 1;
-    background: #f8fafc;
-}
-
-.screenshot-body h4 {
-    color: #1f2937;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.workout-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.workout-item {
-    background: white;
-    padding: 0.75rem;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    color: #374151;
-    border-left: 3px solid #1e40af;
-}
-
-.chart-placeholder {
-    display: flex;
-    align-items: end;
-    gap: 0.5rem;
-    height: 100px;
-    margin-top: 1rem;
-}
-
-.chart-bar {
-    width: 20px;
-    background: linear-gradient(to top, #1e40af, #3b82f6);
-    border-radius: 2px;
-    min-height: 20px;
 }
 
 /* Footer */
@@ -622,9 +427,10 @@ body {
     margin-bottom: 1rem;
 }
 
-.footer-logo i {
-    color: #fbbf24;
-    font-size: 1.5rem;
+.footer-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
 }
 
 .footer-logo h3 {
@@ -657,14 +463,14 @@ body {
 }
 
 .footer-section ul li a:hover {
-    color: #fbbf24;
+    color: #FCA311FF;
 }
 
 .footer-download-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: #fbbf24;
+    background: #FCA311FF;
     color: #1f2937;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
@@ -686,7 +492,7 @@ body {
 }
 
 .contact-info i {
-    color: #fbbf24;
+    color: #FCA311FF;
     width: 16px;
 }
 
@@ -748,9 +554,7 @@ body {
         text-align: center;
     }
 
-    .features-grid,
-    .workouts-grid,
-    .plans-grid {
+    .features-grid {
         grid-template-columns: 1fr;
     }
 
@@ -758,14 +562,9 @@ body {
         font-size: 2rem;
     }
 
-    .phone-frame {
-        width: 240px;
-        height: 480px;
-    }
-
     .screenshot {
         width: 240px;
-        height: 400px;
+        height: 480px;
     }
 }
 
@@ -792,22 +591,15 @@ body {
         gap: 1rem;
     }
 
-    .phone-frame {
-        width: 200px;
-        height: 400px;
-    }
-
     .screenshot {
         width: 200px;
-        height: 350px;
+        height: 400px;
     }
 }
 
 /* Smooth scrolling and animations */
 @media (prefers-reduced-motion: no-preference) {
-    .feature-card,
-    .workout-category,
-    .plan-card {
+    .feature-card {
         animation: fadeInUp 0.6s ease-out;
     }
 }
