@@ -300,4 +300,56 @@ pulseStyles.textContent = `
         50% { transform: scale(1.1); }
     }
 `;
-document.head.appendChild(pulseStyles); 
+document.head.appendChild(pulseStyles);
+
+// Contact form handling
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (contactForm) {
+        // Add animation to form inputs
+        const formInputs = contactForm.querySelectorAll('input, textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'translateY(-2px)';
+                this.parentElement.style.transition = 'transform 0.3s ease';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Form submission feedback
+        contactForm.addEventListener('submit', function(e) {
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Change button text to show it's submitting
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Note: FormSubmit will redirect to a thank you page by default
+            // If you want to add a custom thank you page, add this hidden input:
+            // <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
+        });
+    }
+    
+    // Animate contact form on scroll
+    const contactFormElement = document.querySelector('.contact-form');
+    if (contactFormElement) {
+        const formObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        contactFormElement.style.opacity = '0';
+        contactFormElement.style.transform = 'translateY(30px)';
+        contactFormElement.style.transition = 'all 0.8s ease';
+        formObserver.observe(contactFormElement);
+    }
+}); 

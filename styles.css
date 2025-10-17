@@ -406,6 +406,78 @@ body {
     padding: 1rem 2rem;
 }
 
+/* Contact Section */
+.contact {
+    padding: 5rem 0;
+    background: #f8fafc;
+}
+
+.contact-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f9fafb;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #14213DFF;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(20, 33, 61, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
 /* Footer */
 .footer {
     background: #1f2937;
@@ -496,6 +568,34 @@ body {
     width: 16px;
 }
 
+/* Buy Me A Coffee Button Hover Effects */
+.contact-info a[href*="buymeacoffee"],
+.contact-info img[alt*="Buy Me A Coffee"] {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.contact-info a[href*="buymeacoffee"]:hover,
+.contact-info a[href*="buymeacoffee"]:hover img {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 10px 25px rgba(252, 163, 17, 0.3);
+}
+
+/* Target the Buy Me A Coffee iframe/button specifically */
+#bmc-wbtn,
+.bmc-btn,
+a[href*="buymeacoffee"] {
+    transition: all 0.3s ease !important;
+}
+
+#bmc-wbtn:hover,
+.bmc-btn:hover,
+a[href*="buymeacoffee"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(252, 163, 17, 0.3) !important;
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
@@ -565,6 +665,10 @@ body {
     .screenshot {
         width: 240px;
         height: 480px;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
     }
 }
 
