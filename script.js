@@ -230,27 +230,32 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Add floating animation to screenshots
-document.querySelectorAll('.screenshot').forEach((screenshot, index) => {
-    screenshot.style.animation = `float ${6 + index}s ease-in-out infinite`;
-    screenshot.style.animationDelay = `${index * 2}s`;
+// Add floating animation to download section screenshots only
+document.querySelectorAll('.download-image .screenshot').forEach((screenshot, index) => {
+    const rotations = ['-5deg', '5deg', '-3deg'];
+    const duration = 5 + (index * 0.5);
+    const delay = index * 0.3;
+    
+    screenshot.style.animation = `float${index + 1} ${duration}s ease-in-out infinite`;
+    screenshot.style.animationDelay = `${delay}s`;
 });
 
 // Add floating animation CSS
 const floatStyles = document.createElement('style');
 floatStyles.textContent = `
-    @keyframes float {
+    @keyframes float1 {
         0%, 100% { transform: translateY(0px) rotate(-5deg); }
-        50% { transform: translateY(-20px) rotate(-5deg); }
-    }
-    
-    .screenshot:nth-child(2) {
-        animation: float2 ${6}s ease-in-out infinite;
+        50% { transform: translateY(-15px) rotate(-5deg); }
     }
     
     @keyframes float2 {
         0%, 100% { transform: translateY(0px) rotate(5deg); }
         50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
+    @keyframes float3 {
+        0%, 100% { transform: translateY(0px) rotate(-3deg); }
+        50% { transform: translateY(-12px) rotate(-3deg); }
     }
 `;
 document.head.appendChild(floatStyles);

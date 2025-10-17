@@ -245,11 +245,31 @@ body {
     align-items: center;
 }
 
+.download-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .app-screenshots {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-direction: row;
+    gap: 1.5rem;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Smaller screenshots for download section to fit horizontally */
+.download-image .screenshot {
+    width: 180px;
+    height: 385px;
+}
+
+.download-image .app-screenshots {
+    gap: 1rem;
+    flex-wrap: nowrap;
 }
 
 .screenshot {
@@ -274,15 +294,16 @@ body {
 }
 
 /* Download section screenshots - multiple with different rotations */
-.screenshot:nth-child(1) {
+.download-image .screenshot:nth-child(1) {
     transform: rotate(-5deg);
 }
 
-.screenshot:nth-child(2) {
+.download-image .screenshot:nth-child(2) {
     transform: rotate(5deg);
+    margin-top: -20px;
 }
 
-.screenshot:nth-child(3) {
+.download-image .screenshot:nth-child(3) {
     transform: rotate(-3deg);
 }
 
@@ -663,8 +684,21 @@ a[href*="buymeacoffee"]:hover {
     }
 
     .screenshot {
-        width: 240px;
-        height: 480px;
+        width: 200px;
+        height: 400px;
+    }
+
+    .download-image .screenshot {
+        width: 150px;
+        height: 320px;
+    }
+
+    .app-screenshots {
+        gap: 0.75rem;
+    }
+
+    .download-image .screenshot:nth-child(2) {
+        margin-top: 0;
     }
 
     .contact-form {
@@ -696,8 +730,17 @@ a[href*="buymeacoffee"]:hover {
     }
 
     .screenshot {
-        width: 200px;
-        height: 400px;
+        width: 160px;
+        height: 320px;
+    }
+    
+    .download-image .screenshot {
+        width: 100px;
+        height: 215px;
+    }
+    
+    .app-screenshots {
+        gap: 0.5rem;
     }
 }
 
